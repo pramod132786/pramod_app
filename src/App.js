@@ -121,7 +121,7 @@ function FinalPage() {
   const [showButton, setShowButton] = useState(false);
 
   const wishes = [
-    { image: "potti_wishes", message: "Wish you a Happy Birthday Pinni! 💖" },
+    { image: "potti_Wishes", message: "Wish you a Happy Birthday Pinni! 💖" },
     { image: "dhanu_wishes", message: "Wish you a Happy Birthday Chiyaa with love 💖" }
   ];
 
