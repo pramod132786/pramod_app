@@ -1,38 +1,347 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Background Video */
+.background-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* HomePage Styles */
+.home-page .container {
+  position: relative;
+  z-index: 2;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animated-text {
+  font-size: 36px;
+  color: #333;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Button Custom Styles */
+.btn-custom {
+  font-size: 18px;
+  background-color: #ff6f61;
   color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-custom:hover {
+  background-color: #e55a50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Wall Page - Hanging Image Effect */
+.wall-page {
+  background-color: #d3d3d3;
+  padding: 50px 0;
+}
+
+.image-rope {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hanging-image {
+  margin: 10px;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hanging-image:hover {
+  transform: scale(1.1);
+}
+
+/* Thread Effect - Wall Page */
+.thread-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}
+
+.hanging-image-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: sway 2s ease-in-out infinite alternate;
+}
+
+/* Animation for hanging images swaying */
+@keyframes sway {
+  0% {
+    transform: translateY(-50%) rotate(-5deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(-50%) rotate(5deg);
+  }
+}
+
+/* Image Carousel */
+.carousel-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.quotes-section {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #555;
+}
+
+.carousel-page {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Final Page */
+.final-page {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.final-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Birthday Message */
+.birthday-message p {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+.birthday-image,
+.special-wishes-page h3 {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Screen Adjustments */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 10px;
+  }
+
+  .home-page .container {
+    padding: 20px;
+  }
+
+  .animated-text {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* Wall Page */
+  .image-rope {
+    flex-direction: column;
+  }
+
+  .hanging-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+
+  /* Carousel Image */
+  .carousel-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .quotes-section p {
+    font-size: 16px;
+    color: #333;
+  }
+
+  /* Final Page */
+  .final-image {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .birthday-message p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* Thread effect adjustment for small screens */
+  .thread-container {
+    height: 400px;
+  }
+
+  .hanging-image-wrapper {
+    top: 50%;
+    transform: translateY(-50%);
+    animation: sway 3s ease-in-out infinite alternate;
+  }
+
+  /* Adjust button size */
+  .btn-custom {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* Very Small Screen Adjustments (Mobile Phones) */
+@media (max-width: 480px) {
+  .home-page .container {
+    padding: 10px;
+  }
+
+  .animated-text {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .btn-custom {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Wall Page */
+  .hanging-image {
+    width: 50%;
+    height: 50%;
+  }
+
+  /* Carousel Page */
+  .carousel-image {
+    max-width: 50%;
+    width: 100%;
+  }
+
+  .quotes-section p {
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* Final Page */
+  .final-image {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .birthday-message p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+/* Custom Animations for Image Transitions */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.wish-container .wish-message {
+  animation-delay: 1s;
+}
+
+.carousel-image, .birthday-image {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.hanging-image {
+  margin: 10px;
+  width: 150px;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.hanging-image:hover {
+  cursor: pointer;
+}
+
+/* Custom CSS for centering quotes */
+.centered-quote {
+  font-size: 20px; /* You can adjust the font size */
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin if needed */
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  
+  /* For mobile and small screens */
+  @media (max-width: 768px) {
+    font-size: 18px; /* Slightly smaller font for mobile */
+    padding: 20px;
+  }
+
+  /* For very small screens like phones */
+  @media (max-width: 480px) {
+    font-size: 16px; /* Even smaller font for very small devices */
+    padding: 15px;
+  }
+}
+
+/* Animation for fading in the quotes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
