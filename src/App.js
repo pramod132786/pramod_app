@@ -279,7 +279,7 @@ function App() {
         <Route path="/wall" element={<WallPage />} />
         <Route path="/carousel" element={<CarouselPage />} />
         <Route path="/final" element={<FinalPage />} />
-        <Route path="/special-wishes" element={<SpecialWishesPage />} />
+        <Route path="/special-wishes" element={<SpecialWishesPage />}/>
       </Routes>
     </Router>
   );
